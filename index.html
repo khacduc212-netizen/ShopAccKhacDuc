@@ -3,58 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NamNhatShop - Bán Acc & Cày Thuê Uy Tín</title>
+    <title>NamNhatShop - Bán Acc & Cày Thuê Roblox Uy Tín</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Orbitron:wght@700;800;900&display=swap');
+        
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0b0f19;
+            font-family: 'Chakra Petch', sans-serif;
+            background-color: #070312;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 40%),
+                linear-gradient(rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
             color: #f8fafc;
         }
-        .glass-card {
-            background: rgba(30, 41, 59, 0.5);
+
+        .font-gaming {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Hiệu ứng thẻ kính Neon Gaming */
+        .cyber-card {
+            background: rgba(15, 10, 35, 0.75);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(168, 85, 247, 0.35);
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(56, 189, 248, 0.6);
-            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #06b6d4, #d946ef, transparent);
+            transition: 0.5s;
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
+
+        .cyber-card:hover::before {
+            left: 100%;
+        }
+
+        .cyber-card:hover {
+            transform: translateY(-6px);
+            border-color: #06b6d4;
+            box-shadow: 0 10px 30px -5px rgba(6, 182, 212, 0.4), 0 0 15px rgba(217, 70, 239, 0.3);
+        }
+
+        /* Chữ phát sáng Gradient */
+        .neon-text {
+            background: linear-gradient(90deg, #00f2fe 0%, #a855f7 50%, #ff007f 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.4));
         }
-        .btn-glow {
-            background: linear-gradient(90deg, #0284c7, #4f46e5);
+
+        /* Nút bấm Gaming */
+        .btn-cyber {
+            background: linear-gradient(90deg, #7e22ce, #db2777, #0891b2);
+            background-size: 200% auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .btn-glow:hover {
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
-            transform: scale(1.02);
+
+        .btn-cyber:hover {
+            background-position: right center;
+            box-shadow: 0 0 25px rgba(219, 39, 119, 0.7), 0 0 10px rgba(6, 182, 212, 0.7);
+            transform: scale(1.03);
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-fuchsia-600 selection:text-white">
 
     <!-- Navbar -->
-    <header class="sticky top-0 z-50 glass-card border-b border-slate-800">
+    <header class="sticky top-0 z-50 cyber-card border-b border-purple-500/40">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-extrabold tracking-wider flex items-center gap-2">
-                <i class="fa-solid fa-gamepad text-sky-400"></i>
-                <span>KHACDUC<span class="gradient-text">SHOP</span></span>
+            <a href="#" class="text-2xl md:text-3xl font-gaming font-black tracking-wider flex items-center gap-2.5">
+                <i class="fa-solid fa-gamepad text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]"></i>
+                <span>NAMNHAT<span class="neon-text">SHOP</span></span>
             </a>
-            <nav class="hidden md:flex space-x-8 font-semibold text-sm text-slate-300">
-                <a href="#ban-acc" class="hover:text-sky-400 transition">MUA ACC ROBLOX</a>
-                <a href="#cay-thue" class="hover:text-sky-400 transition">DỊCH VỤ CÀY THUÊ</a>
-                <a href="#cam-ket" class="hover:text-sky-400 transition">BẢO HÀNH & UY TÍN</a>
+            <nav class="hidden md:flex space-x-8 font-bold text-sm tracking-wide text-slate-200">
+                <a href="#ban-acc" class="hover:text-cyan-400 transition">MUA ACC ROBLOX</a>
+                <a href="#cay-thue" class="hover:text-fuchsia-400 transition">DỊCH VỤ CÀY THUÊ</a>
+                <a href="#cam-ket" class="hover:text-cyan-400 transition">BẢO HÀNH & UY TÍN</a>
             </nav>
-            <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="btn-glow px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg">
+            <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="btn-cyber px-5 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg">
                 <i class="fa-brands fa-facebook text-lg"></i> Liên Hệ Ngay
             </a>
         </div>
@@ -62,136 +105,136 @@
 
     <!-- Hero Banner -->
     <section class="relative py-20 overflow-hidden">
-        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-fuchsia-600/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="container mx-auto px-4 text-center relative z-10">
-            <span class="bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">
-                Uy Tín - Nhanh Chóng - Giá Rẻ
+            <span class="bg-purple-950/80 border border-cyan-400/50 text-cyan-300 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                <i class="fa-solid fa-bolt text-yellow-400 mr-1"></i> Uy Tín - Tự Động - Giá Rẻ
             </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold mt-6 mb-4 leading-tight">
-                SHOP ACC & CÀY THUÊ <br> <span class="gradient-text">ROBLOX SỐ 1</span>
+            <h1 class="text-4xl md:text-6xl font-gaming font-black mt-6 mb-4 leading-tight uppercase">
+                HỆ THỐNG ACC & CÀY THUÊ <br> <span class="neon-text">NAMNHATSHOP</span>
             </h1>
-            <p class="text-slate-400 max-w-2xl mx-auto mb-8 text-base md:text-lg">
-                Chuyên cung cấp tài khoản Blox Fruits, King Legacy, Anime Defenders... và nhận cày thuê mọi dịch vụ hoàn toàn bằng tay, bảo mật tuyệt đối 100%.
+            <p class="text-slate-300 max-w-2xl mx-auto mb-8 text-base md:text-lg font-medium">
+                Kho tài khoản Blox Fruits, King Legacy, Anime Defenders cực khủng và dịch vụ cày thuê siêu tốc hoàn toàn bằng tay, bảo mật tuyệt đối 100%.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#ban-acc" class="btn-glow px-8 py-3.5 rounded-xl font-bold text-white shadow-lg flex items-center gap-2">
-                    <i class="fa-solid fa-cart-shopping"></i> Xem Danh Sách Acc
+                <a href="#ban-acc" class="btn-cyber px-8 py-3.5 rounded-xl font-bold text-white shadow-lg flex items-center gap-2">
+                    <i class="fa-solid fa-cart-shopping"></i> Săn Acc Ngay
                 </a>
-                <a href="#cay-thue" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 px-8 py-3.5 rounded-xl font-bold text-slate-200 transition flex items-center gap-2">
-                    <i class="fa-solid fa-bolt text-yellow-400"></i> Bảng Giá Cày Thuê
+                <a href="#cay-thue" class="bg-slate-900/90 hover:bg-purple-950/60 border border-cyan-500/50 hover:border-cyan-400 px-8 py-3.5 rounded-xl font-bold text-cyan-300 transition flex items-center gap-2 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+                    <i class="fa-solid fa-fire text-fuchsia-400"></i> Bảng Giá Cày Thuê
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Danh Mục Bán Acc -->
-    <section id="ban-acc" class="py-16 container mx-auto px-4">
-        <div class="flex items-center justify-between mb-10">
+    <section id="ban-acc" class="py-14 container mx-auto px-4">
+        <div class="flex items-center justify-between mb-10 border-l-4 border-cyan-400 pl-4">
             <div>
-                <h2 class="text-2xl md:text-3xl font-extrabold uppercase flex items-center gap-3">
-                    <i class="fa-solid fa-fire text-orange-500"></i> Danh Mục Tài Khoản
+                <h2 class="text-2xl md:text-3xl font-gaming font-extrabold uppercase flex items-center gap-3">
+                    <span class="neon-text">KHO TÀI KHOẢN</span> ROBLOX VIP
                 </h2>
-                <p class="text-slate-400 text-sm mt-1">Tài khoản trắng thông tin, đổi mật khẩu ngay sau khi mua</p>
+                <p class="text-slate-400 text-sm mt-1">Tài khoản trắng thông tin, bàn giao ngay sau khi thanh toán</p>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Sản phẩm 1 -->
-            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+            <div class="cyber-card rounded-2xl p-5 flex flex-col justify-between">
                 <div>
-                    <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-800 h-44 flex items-center justify-center border border-slate-700">
-                        <i class="fa-solid fa-dice-d20 text-6xl text-sky-400/40"></i>
-                        <span class="absolute top-2 right-2 bg-rose-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Bán Chạy</span>
+                    <div class="relative rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-purple-950/80 to-slate-900 h-44 flex items-center justify-center border border-purple-500/30">
+                        <i class="fa-solid fa-dice-d20 text-6xl text-fuchsia-400 drop-shadow-[0_0_12px_rgba(232,121,249,0.6)]"></i>
+                        <span class="absolute top-2 right-2 bg-gradient-to-r from-rose-600 to-pink-600 text-white text-xs font-bold px-3 py-1 rounded-md uppercase shadow-md">HOT</span>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">Random Blox Fruits VIP</h3>
-                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Tỷ lệ cao ra Mochi V2, Kitsune, Leopard</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>100% Acc Level Max (2550)</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Bảo hành sai mật khẩu 1 đổi 1</li>
+                    <ul class="text-sm text-slate-300 space-y-2 mb-4">
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Nổ cao Mochi V2, Kitsune, Leopard</li>
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>100% Acc Level Max (2550)</li>
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Bảo hành sai mật khẩu 1 đổi 1</li>
                     </ul>
                 </div>
                 <div>
-                    <div class="flex justify-between items-center mb-4 pt-3 border-t border-slate-700/60">
-                        <span class="text-xs text-slate-400">Giá chỉ từ:</span>
-                        <span class="text-xl font-extrabold text-sky-400">20.000đ - 50.000đ</span>
+                    <div class="flex justify-between items-center mb-4 pt-3 border-t border-purple-500/20">
+                        <span class="text-xs text-slate-400 uppercase">Giá chỉ từ:</span>
+                        <span class="text-xl font-gaming font-bold text-cyan-400">20K - 50K</span>
                     </div>
-                    <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="w-full btn-glow py-2.5 rounded-xl font-bold text-sm flex justify-center items-center gap-2">
-                        <i class="fa-brands fa-facebook-messenger"></i> Inbox Mua Ngay
+                    <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="w-full btn-cyber py-2.5 rounded-xl font-bold text-sm flex justify-center items-center gap-2">
+                        <i class="fa-brands fa-facebook-messenger"></i> Mua Ngay Qua FB
                     </a>
                 </div>
             </div>
 
             <!-- Sản phẩm 2 -->
-            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+            <div class="cyber-card rounded-2xl p-5 flex flex-col justify-between">
                 <div>
-                    <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-800 h-44 flex items-center justify-center border border-slate-700">
-                        <i class="fa-solid fa-dragon text-6xl text-indigo-400/40"></i>
-                        <span class="absolute top-2 right-2 bg-sky-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Trắng Thông Tin</span>
+                    <div class="relative rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-cyan-950/80 to-slate-900 h-44 flex items-center justify-center border border-cyan-500/30">
+                        <i class="fa-solid fa-dragon text-6xl text-cyan-400 drop-shadow-[0_0_12px_rgba(34,211,238,0.6)]"></i>
+                        <span class="absolute top-2 right-2 bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-md uppercase shadow-md">Trắng TT</span>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Acc Có Sẵn Tộc V4 Full Gear</h3>
-                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Tộc Shark, Human, Angel, Cyborg V4</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Kèm Song Kiếm Oden (CDK) + Soul Guitar</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Dư nhiều Fragment & Beli</li>
+                    <h3 class="text-lg font-bold text-white mb-2">Acc Tộc V4 Full Gear</h3>
+                    <ul class="text-sm text-slate-300 space-y-2 mb-4">
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Tộc Shark, Human, Angel, Cyborg V4</li>
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Sẵn Song Kiếm Oden (CDK) + Soul Guitar</li>
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Dư nhiều Fragment & Beli</li>
                     </ul>
                 </div>
                 <div>
-                    <div class="flex justify-between items-center mb-4 pt-3 border-t border-slate-700/60">
-                        <span class="text-xs text-slate-400">Giá tham khảo:</span>
-                        <span class="text-xl font-extrabold text-sky-400">120.000đ</span>
+                    <div class="flex justify-between items-center mb-4 pt-3 border-t border-purple-500/20">
+                        <span class="text-xs text-slate-400 uppercase">Giá ưu đãi:</span>
+                        <span class="text-xl font-gaming font-bold text-cyan-400">120.000đ</span>
                     </div>
-                    <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="w-full btn-glow py-2.5 rounded-xl font-bold text-sm flex justify-center items-center gap-2">
-                        <i class="fa-brands fa-facebook-messenger"></i> Inbox Mua Ngay
+                    <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="w-full btn-cyber py-2.5 rounded-xl font-bold text-sm flex justify-center items-center gap-2">
+                        <i class="fa-brands fa-facebook-messenger"></i> Mua Ngay Qua FB
                     </a>
                 </div>
             </div>
 
             <!-- Sản phẩm 3 -->
-            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+            <div class="cyber-card rounded-2xl p-5 flex flex-col justify-between">
                 <div>
-                    <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-800 h-44 flex items-center justify-center border border-slate-700">
-                        <i class="fa-solid fa-gem text-6xl text-purple-400/40"></i>
-                        <span class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Hàng Tuyển</span>
+                    <div class="relative rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-fuchsia-950/80 to-slate-900 h-44 flex items-center justify-center border border-fuchsia-500/30">
+                        <i class="fa-solid fa-gem text-6xl text-purple-400 drop-shadow-[0_0_12px_rgba(192,132,252,0.6)]"></i>
+                        <span class="absolute top-2 right-2 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-md uppercase shadow-md">Siêu Cấp</span>
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">Acc Có Trái Vĩnh Viễn (Perm)</h3>
-                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Sẵn Perm Buddha, Portal, Mochi, Kitsune...</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Full Haki Vũ Trang, Quan Sát V2</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Hỗ trợ gửi hình ảnh chi tiết từng Acc</li>
+                    <ul class="text-sm text-slate-300 space-y-2 mb-4">
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Sẵn Perm Buddha, Portal, Mochi, Kitsune...</li>
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Full Haki Vũ Trang, Quan Sát V2</li>
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Gửi hình ảnh chi tiết từng Acc để chọn</li>
                     </ul>
                 </div>
                 <div>
-                    <div class="flex justify-between items-center mb-4 pt-3 border-t border-slate-700/60">
-                        <span class="text-xs text-slate-400">Giá:</span>
-                        <span class="text-xl font-extrabold text-sky-400">Thỏa Thuận</span>
+                    <div class="flex justify-between items-center mb-4 pt-3 border-t border-purple-500/20">
+                        <span class="text-xs text-slate-400 uppercase">Giá:</span>
+                        <span class="text-xl font-gaming font-bold text-fuchsia-400">Thỏa Thuận</span>
                     </div>
-                    <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="w-full btn-glow py-2.5 rounded-xl font-bold text-sm flex justify-center items-center gap-2">
+                    <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="w-full btn-cyber py-2.5 rounded-xl font-bold text-sm flex justify-center items-center gap-2">
                         <i class="fa-brands fa-facebook-messenger"></i> Xem Ảnh Acc Qua FB
                     </a>
                 </div>
             </div>
 
             <!-- Sản phẩm 4 -->
-            <div class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+            <div class="cyber-card rounded-2xl p-5 flex flex-col justify-between">
                 <div>
-                    <div class="relative rounded-xl overflow-hidden mb-4 bg-slate-800 h-44 flex items-center justify-center border border-slate-700">
-                        <i class="fa-solid fa-crown text-6xl text-amber-400/40"></i>
-                        <span class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Giá Rẻ</span>
+                    <div class="relative rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-amber-950/60 to-slate-900 h-44 flex items-center justify-center border border-amber-500/30">
+                        <i class="fa-solid fa-crown text-6xl text-amber-400 drop-shadow-[0_0_12px_rgba(251,191,36,0.6)]"></i>
+                        <span class="absolute top-2 right-2 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-md uppercase shadow-md">Giá Rẻ</span>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Acc Max Level + Godhuman + CDK</h3>
-                    <ul class="text-xs text-slate-300 space-y-2 mb-4">
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Full Melee V2 (Godhuman)</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Rương sẵn nhiều trái ác quỷ Mythical</li>
-                        <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Trắng thông tin 100%, chưa gắn mail</li>
+                    <h3 class="text-lg font-bold text-white mb-2">Acc Max Lv + Godhuman + CDK</h3>
+                    <ul class="text-sm text-slate-300 space-y-2 mb-4">
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Full Melee V2 (Godhuman)</li>
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Rương sẵn nhiều trái ác quỷ Mythical</li>
+                        <li><i class="fa-solid fa-check text-cyan-400 mr-2"></i>Trắng thông tin 100%, chưa gắn mail</li>
                     </ul>
                 </div>
                 <div>
-                    <div class="flex justify-between items-center mb-4 pt-3 border-t border-slate-700/60">
-                        <span class="text-xs text-slate-400">Giá chỉ:</span>
-                        <span class="text-xl font-extrabold text-sky-400">70.000đ</span>
+                    <div class="flex justify-between items-center mb-4 pt-3 border-t border-purple-500/20">
+                        <span class="text-xs text-slate-400 uppercase">Giá chỉ:</span>
+                        <span class="text-xl font-gaming font-bold text-cyan-400">70.000đ</span>
                     </div>
-                    <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="w-full btn-glow py-2.5 rounded-xl font-bold text-sm flex justify-center items-center gap-2">
-                        <i class="fa-brands fa-facebook-messenger"></i> Inbox Mua Ngay
+                    <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="w-full btn-cyber py-2.5 rounded-xl font-bold text-sm flex justify-center items-center gap-2">
+                        <i class="fa-brands fa-facebook-messenger"></i> Mua Ngay Qua FB
                     </a>
                 </div>
             </div>
@@ -200,63 +243,63 @@
 
     <!-- Bảng Giá Cày Thuê -->
     <section id="cay-thue" class="py-16 container mx-auto px-4">
-        <div class="glass-card rounded-3xl p-6 md:p-10">
+        <div class="cyber-card rounded-3xl p-6 md:p-10">
             <div class="text-center max-w-xl mx-auto mb-10">
-                <h2 class="text-2xl md:text-3xl font-extrabold uppercase flex justify-center items-center gap-3">
-                    <i class="fa-solid fa-bolt text-yellow-400"></i> Bảng Giá Cày Thuê Roblox
+                <h2 class="text-2xl md:text-3xl font-gaming font-black uppercase flex justify-center items-center gap-3">
+                    <i class="fa-solid fa-bolt text-cyan-400"></i> BẢNG GIÁ <span class="neon-text">CÀY THUÊ</span>
                 </h2>
-                <p class="text-slate-400 text-sm mt-2">Hoàn thành siêu tốc trong ngày - Giữ nguyên toàn bộ Trái Ác Quỷ và Beli nhặt được trong quá trình cày.</p>
+                <p class="text-slate-300 text-sm mt-2">Cày tay 100% siêu tốc - Giữ nguyên toàn bộ Trái Ác Quỷ và Beli nhặt được trong quá trình cày.</p>
             </div>
 
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse">
                     <thead>
-                        <tr class="border-b border-slate-700 text-sky-400 text-sm uppercase">
+                        <tr class="border-b border-purple-500/40 text-cyan-400 font-gaming text-xs md:text-sm uppercase">
                             <th class="py-4 px-4">Gói Dịch Vụ</th>
                             <th class="py-4 px-4">Thời Gian Hoàn Thành</th>
                             <th class="py-4 px-4">Giá Tiền</th>
-                            <th class="py-4 px-4 text-right">Đặt Đơn</th>
+                            <th class="py-4 px-4 text-right">Thao Tác</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-800 text-sm">
-                        <tr class="hover:bg-slate-800/40 transition">
+                    <tbody class="divide-y divide-purple-900/40 text-sm md:text-base">
+                        <tr class="hover:bg-purple-900/20 transition">
                             <td class="py-4 px-4 font-bold text-white">Cày Level (Từ Lv 1 -> Max Level)</td>
-                            <td class="py-4 px-4 text-slate-400">12 - 24 Giờ</td>
-                            <td class="py-4 px-4 font-bold text-emerald-400">40.000đ</td>
+                            <td class="py-4 px-4 text-slate-300">12 - 24 Giờ</td>
+                            <td class="py-4 px-4 font-gaming font-bold text-fuchsia-400">40.000đ</td>
                             <td class="py-4 px-4 text-right">
-                                <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-white px-4 py-1.5 rounded-lg font-semibold transition inline-block">Thuê Ngay</a>
+                                <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="btn-cyber px-4 py-1.5 rounded-lg font-bold text-xs inline-block">Thuê Ngay</a>
                             </td>
                         </tr>
-                        <tr class="hover:bg-slate-800/40 transition">
+                        <tr class="hover:bg-purple-900/20 transition">
                             <td class="py-4 px-4 font-bold text-white">Lấy Godhuman / Sanguine Art (Huyết Quỷ Thuật)</td>
-                            <td class="py-4 px-4 text-slate-400">1 - 2 Ngày</td>
-                            <td class="py-4 px-4 font-bold text-emerald-400">50.000đ</td>
+                            <td class="py-4 px-4 text-slate-300">1 - 2 Ngày</td>
+                            <td class="py-4 px-4 font-gaming font-bold text-fuchsia-400">50.000đ</td>
                             <td class="py-4 px-4 text-right">
-                                <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-white px-4 py-1.5 rounded-lg font-semibold transition inline-block">Thuê Ngay</a>
+                                <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="btn-cyber px-4 py-1.5 rounded-lg font-bold text-xs inline-block">Thuê Ngay</a>
                             </td>
                         </tr>
-                        <tr class="hover:bg-slate-800/40 transition">
+                        <tr class="hover:bg-purple-900/20 transition">
                             <td class="py-4 px-4 font-bold text-white">Up Tộc V4 (1 Gear / Full Gear + Đảo Bí Ẩn)</td>
-                            <td class="py-4 px-4 text-slate-400">Trong Ngày</td>
-                            <td class="py-4 px-4 font-bold text-emerald-400">30.000đ - 80.000đ</td>
+                            <td class="py-4 px-4 text-slate-300">Trong Ngày</td>
+                            <td class="py-4 px-4 font-gaming font-bold text-fuchsia-400">30K - 80K</td>
                             <td class="py-4 px-4 text-right">
-                                <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-white px-4 py-1.5 rounded-lg font-semibold transition inline-block">Thuê Ngay</a>
+                                <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="btn-cyber px-4 py-1.5 rounded-lg font-bold text-xs inline-block">Thuê Ngay</a>
                             </td>
                         </tr>
-                        <tr class="hover:bg-slate-800/40 transition">
+                        <tr class="hover:bg-purple-900/20 transition">
                             <td class="py-4 px-4 font-bold text-white">Lấy Song Kiếm Oden (CDK) / Mỏ Neo (Shark Anchor)</td>
-                            <td class="py-4 px-4 text-slate-400">6 - 12 Giờ</td>
-                            <td class="py-4 px-4 font-bold text-emerald-400">40.000đ</td>
+                            <td class="py-4 px-4 text-slate-300">6 - 12 Giờ</td>
+                            <td class="py-4 px-4 font-gaming font-bold text-fuchsia-400">40.000đ</td>
                             <td class="py-4 px-4 text-right">
-                                <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-white px-4 py-1.5 rounded-lg font-semibold transition inline-block">Thuê Ngay</a>
+                                <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="btn-cyber px-4 py-1.5 rounded-lg font-bold text-xs inline-block">Thuê Ngay</a>
                             </td>
                         </tr>
-                        <tr class="hover:bg-slate-800/40 transition">
+                        <tr class="hover:bg-purple-900/20 transition">
                             <td class="py-4 px-4 font-bold text-white">Cày Beli / Điểm Fragment / Săn Leviathan</td>
-                            <td class="py-4 px-4 text-slate-400">2 - 6 Giờ</td>
-                            <td class="py-4 px-4 font-bold text-emerald-400">Từ 20.000đ</td>
+                            <td class="py-4 px-4 text-slate-300">2 - 6 Giờ</td>
+                            <td class="py-4 px-4 font-gaming font-bold text-fuchsia-400">Từ 20.000đ</td>
                             <td class="py-4 px-4 text-right">
-                                <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="bg-sky-500/20 hover:bg-sky-500 text-sky-300 hover:text-white px-4 py-1.5 rounded-lg font-semibold transition inline-block">Thuê Ngay</a>
+                                <a href="https://www.facebook.com/share/1PLC6ezwRs/" target="_blank" class="btn-cyber px-4 py-1.5 rounded-lg font-bold text-xs inline-block">Thuê Ngay</a>
                             </td>
                         </tr>
                     </tbody>
@@ -268,43 +311,6 @@
     <!-- Cam Kết & Hướng Dẫn Giao Dịch -->
     <section id="cam-ket" class="py-12 container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass-card p-6 rounded-2xl text-center">
-                <div class="w-14 h-14 bg-sky-500/10 text-sky-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
+            <div class="cyber-card p-6 rounded-2xl text-center">
+                <div class="w-14 h-14 bg-cyan-500/10 border border-cyan-500/40 text-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-[0_0_15px_rgba(6,182,212,0.3)]">
                     <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2">Bảo Mật Tuyệt Đối 100%</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">Không sử dụng phần mềm thứ 3 gây khóa Acc. Toàn bộ thông tin khách hàng được giữ kín hoàn toàn.</p>
-            </div>
-            <div class="glass-card p-6 rounded-2xl text-center">
-                <div class="w-14 h-14 bg-indigo-500/10 text-indigo-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                    <i class="fa-solid fa-wallet"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2">Thanh Toán Linh Hoạt</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">Nhận thanh toán qua Chuyển khoản Ngân hàng (ATM), Ví MoMo, hoặc Thẻ cào điện thoại/Zing/Garena.</p>
-            </div>
-            <div class="glass-card p-6 rounded-2xl text-center">
-                <div class="w-14 h-14 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2">Hỗ Trợ Trực Tiếp 24/7</h3>
-                <p class="text-slate-400 text-xs leading-relaxed">Tư vấn, gửi hình ảnh Acc thực tế và cập nhật tiến độ cày thuê liên tục qua tin nhắn Facebook.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-slate-800/80 py-8 mt-12 bg-slate-950/50">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <div>
-                <p class="font-bold text-white">KHACDUC ROBLOX SHOP</p>
-                <p class="text-xs text-slate-500 mt-1">© 2026 Dịch vụ mua bán và cày thuê tài khoản Roblox uy tín.</p>
-            </div>
-            <a href="https://www.facebook.com/share/1CaPV8CWZZ/" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-semibold flex items-center gap-2">
-                <i class="fa-brands fa-facebook"></i> Kết nối qua Facebook chính thức
-            </a>
-        </div>
-    </footer>
-
-</body>
-  </html>
-  
